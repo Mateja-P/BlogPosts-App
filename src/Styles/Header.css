@@ -1,0 +1,38 @@
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content p {
+  text-decoration: underline;
+  margin: 0 5px;
+  height: 100%;
+  display: flex;
+  align-items: end;
+}
+
+.links__div {
+  margin: 0 20px;
+}
+
+.links__div,
+.users-info__div {
+  display: flex;
+  align-items: end;
+}
+
+.space-between__div {
+  display: flex;
+}
+
+.input__div input {
+  padding: 3px 0;
+  padding-left: 3px;
+}

@@ -1,0 +1,17 @@
+.showing-messages__div {
+  background-color: grey;
+  border: 2px solid black;
+  position: relative;
+  padding: 15px 10px;
+}
+
+.closed-tab {
+  display: none;
+}
+
+.close-tab {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  cursor: pointer;
+}
