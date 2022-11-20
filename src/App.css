@@ -4,14 +4,12 @@
   grid-template-columns: 0.4fr 1.6fr;
   grid-template-rows: auto auto auto 1fr;
   gap: 10px;
+  overflow: hidden;
 }
 
 .header-grid__div {
   grid-column-start: 1;
   grid-column-end: 3;
-}
-
-.grid-div__wrapper {
 }
 
 .messages-grid__div {
@@ -27,7 +25,10 @@
 }
 
 .categories-grid__div {
-  border: 1px solid black;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  padding-left: 10px;
+  padding-bottom: 30px;
 }
 
 .blogposts-grid__div {
@@ -37,4 +38,22 @@
 
 .blogposts-grid__div::-webkit-scrollbar {
   display: none;
+}
+
+@media (max-width: 950px) {
+  .App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+  }
+  .button-grid__div,
+  .blogposts-grid__div,
+  .messages-grid__div,
+  .categories-grid__div {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 0;
+  }
 }

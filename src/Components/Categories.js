@@ -1,13 +1,50 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import '../Styles/Categories.css';
+import { useSelector } from 'react-redux';
 
 function Categories() {
+  const [visibleCategory, setVisibleCategory] = useState(false);
+  const { categoryList } = useSelector((state) => state.appInfo);
+
   return (
     <div className='categories-div__wrapper'>
       <div className='categories-content'>
-        <h4>Blog categories</h4>
-        <p>Sport</p>
-        <p>Zabava</p>
-        <p>Svet</p>
+        <div className='toggle-div__wrapper'>
+          <h4>Blog categories</h4>
+          <div
+            className={
+              visibleCategory ? 'toggle-category active' : 'toggle-category'
+            }
+            onClick={() => {
+              setVisibleCategory(!visibleCategory);
+            }}
+          >
+            <div
+              className={
+                visibleCategory ? 'animation-div active' : 'animation-div'
+              }
+            ></div>
+          </div>
+        </div>
+        <div
+          className={
+            visibleCategory ? 'categories-options active' : 'categories-options'
+          }
+        >
+          {categoryList.map((category, index) => {
+            return (
+              <Link
+                to={`/category/${category.id}`}
+                className='filter-option'
+                key={index}
+              >
+                {category.name}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

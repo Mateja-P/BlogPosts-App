@@ -3,6 +3,7 @@
   border: 2px solid black;
   position: relative;
   padding: 15px 10px;
+  margin: 10px 0;
 }
 
 .closed-tab {
@@ -14,4 +15,32 @@
   top: 3px;
   right: 10px;
   cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .messages-div__wrapper h2 {
+    font-size: 21px;
+  }
+  .showing-messages__div p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .showing-messages__div {
+    padding: 10px 5px;
+    display: flex;
+  }
+  .messages-div__wrapper h2 {
+    font-size: 20px;
+  }
+  .showing-messages__div p {
+    font-size: 13px;
+    width: 94%;
+    display: flex;
+    align-items: center;
+  }
+  .close-tab {
+    position: static;
+  }
 }

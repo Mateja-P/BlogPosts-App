@@ -11,7 +11,7 @@ function Messages() {
       <h2>Welcome to My Blog</h2>
       <div className={visibleTab ? 'showing-messages__div' : 'closed-tab'}>
         {allMessages.length > 0 ? (
-          <p>Unread messages {allMessages.length}</p>
+          <p>Unread messages: {allMessages.length}</p>
         ) : (
           <p>Container for showing application messages</p>
         )}
