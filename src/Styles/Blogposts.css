@@ -21,6 +21,10 @@
   padding: 15px;
 }
 
+.each-post__wrapper:nth-child(odd) {
+  background-color: rgb(220, 220, 220);
+}
+
 .margin-button {
   margin-left: 10px;
 }
@@ -42,6 +46,12 @@
 .alternative-text {
   margin-top: 40px;
   text-align: center;
+}
+
+@media (max-width: 1300px) {
+  .posts-time {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -66,7 +76,7 @@
 
 @media (max-width: 400px) {
   .flex-info img {
-    width: 50px;
+    height: 60px;
   }
   .blog-images img {
     width: 65px;

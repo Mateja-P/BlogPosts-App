@@ -33,17 +33,19 @@ function Categories() {
             visibleCategory ? 'categories-options active' : 'categories-options'
           }
         >
-          {categoryList.map((category, index) => {
-            return (
-              <Link
-                to={`/category/${category.id}`}
-                className='filter-option'
-                key={index}
-              >
-                {category.name}
-              </Link>
-            );
-          })}
+          {categoryList.length > 0
+            ? categoryList.map((category, index) => {
+                return (
+                  <Link
+                    to={`/category/${category.id}`}
+                    className='filter-option'
+                    key={index}
+                  >
+                    {category.name}
+                  </Link>
+                );
+              })
+            : 'Insert Categories'}
         </div>
       </div>
     </div>

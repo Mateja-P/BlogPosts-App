@@ -56,4 +56,7 @@
     padding-left: 15px;
     padding-bottom: 0;
   }
+  .blogposts-grid__div {
+    padding-top: 10px;
+  }
 }

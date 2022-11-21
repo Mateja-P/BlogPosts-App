@@ -112,10 +112,14 @@ function Modal() {
           <CloseIcon />
         </div>
         {modalPurpose === 'Edit' ? <h2>Edit post</h2> : <h2>Add post</h2>}
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          encType='multipart/form-data'
+        >
           <div className='input__wrapper'>
             <p className='error_p'>* {titleHandler}</p>
             <input
+              className={titleHandler != '' ? 'incorrect-input' : undefined}
               type='text'
               placeholder='Title'
               onChange={(e) => {
@@ -127,6 +131,7 @@ function Modal() {
           <div className='input__wrapper'>
             <p className='error_p'>* {textHandler}</p>
             <textarea
+              className={textHandler != '' ? 'incorrect-input' : undefined}
               placeholder='Text'
               onChange={(e) => {
                 setText(e.target.value);
@@ -137,7 +142,10 @@ function Modal() {
 
           <div className='input__wrapper'>
             <p className='error_p'>* {categoryHandler}</p>
-            <select onChange={(e) => setCategory(e.target.value)}>
+            <select
+              onChange={(e) => setCategory(e.target.value)}
+              className={categoryHandler != '' ? 'incorrect-input' : undefined}
+            >
               <option value=''>Select category</option>
               {categoryList.map((category) => {
                 return (
@@ -152,7 +160,6 @@ function Modal() {
               })}
             </select>
           </div>
-
           <Button
             text={modalPurpose === 'Edit' ? 'Confirm' : 'Add post'}
             padding='5px 10px'

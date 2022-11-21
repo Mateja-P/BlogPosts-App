@@ -37,7 +37,11 @@
 }
 
 .input__wrapper {
-  margin: 20px 0;
+  margin: 15px 0;
+}
+
+.incorrect-input {
+  border: 1px solid red;
 }
 
 .error_p {
