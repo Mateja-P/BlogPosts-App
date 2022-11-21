@@ -33,7 +33,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        {openModal ? <Modal /> : ''}
+        {openModal && <Modal />}
         <div className='header-grid__div'>
           <Header />
         </div>
